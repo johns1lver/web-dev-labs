@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript вправи</title>
+    <link rel="stylesheet" href="../css/lab5.css">
+</head>
+<body>
+    <script src="../js/lab5.js"></script>
+
+    <script>
+
+
+        var foo = "Данило";
+        var bar = foo;
+        alert(bar);
+
+        for (var i = 0; i < 10; i++) {
+            console.log("Строка " + (i + 1));
+        }
+
+
+        function changeText() {
+            document.getElementById("myButton").innerHTML = "Не натискай";
+        }
+    </script>
+
+    <button id="myButton" onmouseover="changeText()">Натисни сюди</button>
+
+    <div id="marqueeContainer">
+        <div id="marqueeText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus dicta similique distinctio nihil asperiores ducimus pariatur, nam nisi doloremque mollitia repellat quos accusamus, harum exercitationem, iure obcaecati assumenda molestiae ab?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus dicta similique distinctio nihil asperiores ducimus pariatur, nam nisi doloremque mollitia repellat quos accusamus, harum exercitationem, iure obcaecati assumenda molestiae ab?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus dicta similique distinctio nihil asperiores ducimus pariatur, nam nisi doloremque mollitia repellat quos accusamus, harum exercitationem, iure obcaecati assumenda molestiae ab?</div>
+    </div>
+    <script>
+        var marqueeText = document.getElementById("marqueeText");
+        var marqueeContainer = document.getElementById("marqueeContainer");
+        var marqueeSpeed = 3; 
+
+        function moveMarquee() {
+            marqueeContainer.scrollLeft += marqueeSpeed;
+            if (marqueeContainer.scrollLeft >= marqueeText.offsetWidth) {
+                marqueeContainer.scrollLeft = 0;
+            }
+        }
+        setInterval(moveMarquee, 50); 
+    </script>
+</body>
+</html>

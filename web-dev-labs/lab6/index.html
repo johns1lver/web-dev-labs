@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛАбораторна робота 6</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/lab6.css">
+</head>
+<body>
+
+
+    <ul id="menu">
+        <li>Елемент 1</li>
+        <li>Елемент 2</li>
+        <li>Елемент 3</li>
+    </ul>
+
+
+    <div id="sprite"></div>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#menu li").hover(function(){
+                $(this).animate({fontSize: '+=5px'}, 'fast');
+            }, function(){
+                $(this).animate({fontSize: '-=5px'}, 'fast');
+            });
+        });
+    </script>
+
+
+    <script>
+        $(document).ready(function(){
+            var position = 0;
+            setInterval(function(){
+                position -= 100;
+                $('#sprite').css('background-position', position + 'px 0');
+                if (position <= -500) {
+                    position = 0;
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
